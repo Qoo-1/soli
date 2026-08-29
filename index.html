@@ -2,19 +2,29 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="theme-color" content="#edfaff">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Soli">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/soli-icon-192.png">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/app.css">
 <title>Soli · 夏日奇冰</title>
 </head>
 <body>
-<div class="phone">
+<div id="boot" class="boot"><div class="boot-mark">soli</div><div class="boot-line"></div></div>
+<div class="phone" id="app">
   <header class="status"><span id="clock">--:--</span><span class="status-right"><i></i><i></i><i></i></span></header>
   <main id="screen"></main>
   <nav id="nav"></nav>
+</div>
+<div id="fatal" class="fatal" hidden>
+  <div><b>Soli 没有完成加载</b><p>请确认 css 与 js 文件夹和 index.html 位于同一项目目录，然后重新部署。</p><button onclick="location.reload()">重新加载</button></div>
 </div>
 <script src="js/store.js"></script>
 <script src="js/icons.js"></script>
