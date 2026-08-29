@@ -4,6 +4,5 @@ world:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="
 life:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M5.2 20.2h13.6"/><path d="M8 20.2v-6.7c0-2.9 1.6-5 4-6.5 2.4 1.5 4 3.6 4 6.5v6.7"/><path d="M12 7V3.5M12 5.7c-2.3-.1-3.8-1.2-4.5-2.7M12 5.7c2.3-.1 3.8-1.2 4.5-2.7"/></svg>`,
 cabinet:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="17" rx="2.4"/><path d="M4 9.2h16M4 14.8h16M12 3.7v5.2M12 14.9v5.3"/><circle cx="8.2" cy="6.4" r=".7" fill="currentColor" stroke="none"/><circle cx="8.2" cy="12" r=".7" fill="currentColor" stroke="none"/></svg>`,
 plus:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>`,
-arrow:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>`,
-book:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5h11.5A2.5 2.5 0 0 1 19 7v12.5H7.5A2.5 2.5 0 0 1 5 17V4.5Z"/><path d="M5 17c0-1.4 1.1-2.5 2.5-2.5H19M9 8h6M9 11h4"/></svg>`
+arrow:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>`
 };
