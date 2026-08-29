@@ -1,0 +1,9 @@
+{
+  "name":"Soli · 夏日奇冰",
+  "short_name":"Soli",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#edfaff",
+  "theme_color":"#dff5fb",
+  "lang":"zh-CN"
+}
