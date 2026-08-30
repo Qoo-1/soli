@@ -1,5 +1,9 @@
 (()=>{try{
 const screen=document.querySelector("#screen"),nav=document.querySelector("#nav"),clock=document.querySelector("#clock"),boot=document.querySelector("#boot"),fatal=document.querySelector("#fatal");
+if(!screen||!nav||!clock) throw new Error("Soli DOM 初始化失败：缺少 screen、nav 或 clock。");
+if(!window.SoliStore) throw new Error("SoliStore 未加载。");
+if(!window.SoliIcons) throw new Error("SoliIcons 未加载。");
+if(!window.SoliEngine) throw new Error("SoliEngine 未加载。");
 let route="surface",activeChar=null;
 const navItems=[["chat","Chat"],["world","World"],["life","Life"],["cabinet","Cabinet"]];
 const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
@@ -64,8 +68,25 @@ bind();
 if(route==="chatroom"){const b=document.querySelector("#messages");b.scrollTop=b.scrollHeight}
 }
 render();
+window.__soliReady=true;
+if(window.__soliDiagnostics) window.__soliDiagnostics.app="OK";
 setTimeout(()=>boot.classList.add("hide"),550);
-if("serviceWorker" in navigator)navigator.serviceWorker.register("service-worker.js").catch(()=>{});
+
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.register("./service-worker.js",{updateViaCache:"none"})
+    .then(reg=>{
+      if(window.__soliDiagnostics) window.__soliDiagnostics.serviceWorker="OK";
+      reg.update().catch(()=>{});
+    })
+    .catch(error=>{
+      if(window.__soliDiagnostics) window.__soliDiagnostics.serviceWorker="ERROR";
+      console.warn("Soli Service Worker registration failed:",error);
+    });
+}else if(window.__soliDiagnostics){
+  window.__soliDiagnostics.serviceWorker="UNAVAILABLE";
+}
 }catch(error){
-console.error(error);document.querySelector("#fatal").hidden=false;document.querySelector("#boot").classList.add("hide");
+console.error(error);
+if(window.__soliFail) window.__soliFail(error,"app");
+else {document.querySelector("#fatal").hidden=false;document.querySelector("#boot").classList.add("hide");}
 }})();
